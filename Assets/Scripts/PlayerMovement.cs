@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private float _direction = 1;
+    private float _scaleValue = 1;
 
     private void Start()
     {
@@ -39,11 +40,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizontalMovement < 0)
         {
-            transform.localScale = new Vector3(-_direction, 1, 1);
+            transform.localScale = new Vector3(-_direction, _scaleValue, _scaleValue);
         }
         else if (horizontalMovement > 0)
         {
-            transform.localScale = new Vector3(_direction, 1, 1);
+            transform.localScale = new Vector3(_direction, _scaleValue, _scaleValue);
         }
 
         Vector2 movement = new Vector2(horizontalMovement, _rigidbody2D.velocity.y);
