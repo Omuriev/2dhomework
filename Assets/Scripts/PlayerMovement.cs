@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
+    const string Speed = "Speed";
+
     [SerializeField] private float _speed = 2f;
     [SerializeField] private float _jumpForce = 1f;
 
@@ -49,6 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 movement = new Vector2(horizontalMovement, _rigidbody2D.velocity.y);
         _rigidbody2D.velocity = movement;
-        _animator.SetFloat("Speed", Mathf.Abs(horizontalMovement));
+        _animator.SetFloat(Speed, Mathf.Abs(horizontalMovement));
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    const string Speed = "Speed";
+
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform _path;
     [SerializeField] private Rigidbody2D _rigidbody2D;
@@ -33,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
     {
         _rigidbody2D.velocity = new Vector2(_speed * _direction, _rigidbody2D.velocity.y);
         transform.localScale = new Vector3(_direction, _scaleValue, _scaleValue);
-        _animator.SetFloat("Speed", _speed);
+        _animator.SetFloat(Speed, _speed);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
